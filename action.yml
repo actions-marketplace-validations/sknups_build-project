@@ -1,0 +1,14 @@
+---
+name: 'SKNUPS Build Project'
+description: 'Action common to ALL projects in the SKNUPS organization'
+
+runs:
+  using: 'composite'
+  steps:
+
+    - name: Execute ShellCheck
+      uses: ludeeus/action-shellcheck@cd81f44
+
+    - name: Execute YAMLlint
+      shell: bash
+      run: yamllint .
